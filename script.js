@@ -38,12 +38,19 @@ const lookup = {
     let str = "";
     for(let i=0;i<encodedStr.length;i++)
     {
-        for(let j in lookup)
+        if(encodedStr[i]==" ")
         {
-            if(encodedStr[i]==j)
+            str=str+encodedStr[i];
+        }
+        else
+        {
+            for(let j in lookup)
             {
-                str=str+lookup[j];
-                break;
+                if(encodedStr[i]==j)
+                {
+                    str=str+lookup[j];
+                    break;
+                }
             }
         }
     }
